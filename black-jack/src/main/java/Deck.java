@@ -29,9 +29,24 @@ public class Deck {
         return this.deck;
     }
 
+    /**
+     * Always draw the card on top of the deck.
+     * The only exception to break the assumption is when the deck is empty.
+     * @return card at top of the deck but raise exception when the deck is empty
+     */
+    public Card dealCard() {
+            List<Card> cards = this.getDeck();
+            if (cards.isEmpty()) {
+                // Throwing IllegalStateException when the deck is empty
+                throw new IllegalStateException("Cannot deal card: The deck is empty. Please reshuffle or create a new deck.");
+            }
+            return cards.remove(cards.size() - 1);
+    }
+
+
+
 //    shuffle() — randomizes card order.
 //
 //    dealCard() — returns and removes the top card.
-//
-//    cardsLeft() — optional, returns count.
+
 }

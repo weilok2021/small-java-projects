@@ -30,4 +30,15 @@ public class DeckTest {
             }
         }
     }
+    // check if the deal cards are from the top of the deck
+    @Test
+    void testDealCardsFromTopOfDeck() {
+        Deck deck = new Deck();
+        List<Card> cards = deck.getDeck();
+        for (int i = 0; i < 52; i++) {
+            Card expectedCardDrawed = cards.get(cards.size() - 1);
+            Card cardDrawed = deck.dealCard();
+            assertTrue(cardDrawed.equals(expectedCardDrawed));
+        }
+    }
 }
