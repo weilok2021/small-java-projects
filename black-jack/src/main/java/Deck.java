@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Deck {
@@ -44,9 +45,19 @@ public class Deck {
     }
 
 
+    /**
+     * Mutating method that directly mutate the deck
+     * Shuffle the deck using java builtin shuffle method.
+     */
+    public void shuffle() {
+        Collections.shuffle(this.deck);
+    }
 
-//    shuffle() — randomizes card order.
-//
-//    dealCard() — returns and removes the top card.
-
+    public static void main(String[] args) {
+        Deck deck = new Deck();
+        deck.shuffle();
+        for (Card card: deck.getDeck()) {
+            IO.println(card);
+        }
+    }
 }
