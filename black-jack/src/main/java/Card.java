@@ -10,8 +10,8 @@ public class Card {
      *   new Card(Rank.ACE, Suit.HEARTS) → "ACE of HEARTS"
      */
 
-    final Suit suit;
-    final Rank rank;
+    private final Suit suit;
+    private final Rank rank;
 
     public enum Suit {
         HEARTS, DIAMONDS, CLUBS, SPADES

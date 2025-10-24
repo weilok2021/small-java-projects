@@ -1,12 +1,33 @@
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class DeckTest {
-    // Check can a desk successfully created
+    // Check is the new deck size equals to 52
     @Test
-    void testInitializdeDeck() {
-        Deck deck = Deck().getDeck();
-        assertEquals(52, deck.size());
+    void testSizeOfNewDeck() {
+        Deck deck = new Deck();
+        assertEquals(52, deck.getDeck().size());
+    }
+
+    // Check if all required(rank, suite) 52 cards exist in the new deck
+    @Test
+    void testRequireCardExistence() {
+        Deck deck = new Deck();
+        List<Card> cards = deck.getDeck();
+        // 2. Assert that every possible unique card is present
+        for (Card.Suit suit : Card.Suit.values()) {
+            for (Card.Rank rank : Card.Rank.values()) {
+                // Create the card we expect to find
+                Card expectedCard = new Card(rank, suit);
+
+                // Check if the list contains the expected card, relying on Card.equals()
+                assertTrue(cards.contains(expectedCard),
+                        () -> "Deck is missing the card: " + expectedCard.toString());
+            }
+        }
     }
 }
