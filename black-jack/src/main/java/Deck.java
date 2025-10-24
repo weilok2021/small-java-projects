@@ -3,6 +3,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
+    /**
+     * Collection of cards for the game. Started with 52 cards
+     * Provide a new deck with 52 cards after instantiated the deck object.
+     * Provide deal/draw card, shuffle methods.
+     */
     private final List<Card> deck;
 
     /**
