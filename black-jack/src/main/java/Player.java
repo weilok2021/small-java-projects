@@ -8,6 +8,10 @@ public class Player {
         this.hand = new ArrayList<Card>();
     }
 
+    public List<Card> getHand() {
+        return this.hand;
+    }
+
     /**
      * Add param card to hand
      * @param card
@@ -57,5 +61,47 @@ public class Player {
 
     public int getHandSize() {
         return this.hand.size();
+    }
+
+    public String showHand() {
+        if (hand.isEmpty())
+            return "Player has no hand";
+
+        StringBuilder sb = new StringBuilder("Player's hand:\n");
+        for (Card card : hand) {
+            sb.append(capitalize(card.getRank().name()))
+                    .append(" of ")
+                    .append(capitalize(card.getSuit().name()))
+                    .append("\n");
+        }
+        return sb.toString();
+    }
+
+    private String capitalize(String s) {
+        return s.charAt(0) + s.substring(1).toLowerCase();
+    }
+
+//    @Override
+//    public String toString() {
+//        List<Card> playerHand = this.getHand();
+//        if (playerHand.isEmpty())
+//            return "Player has no hand";
+//
+//        String s = "";
+//        s += "Player's hand: \n";
+//        for (Card card: playerHand) {
+//            s += card.getRank().toString() + " of " + card.getSuit().toString();
+//            s += "\n";
+//        }
+//        return s;
+//    }
+
+    public static void main(String[] args) {
+        Player player = new Player();
+        IO.println(player.showHand());
+        player.addCard(new Card(Card.Rank.ACE, Card.Suit.HEARTS));
+        player.addCard(new Card(Card.Rank.KING, Card.Suit.HEARTS));
+        player.addCard(new Card(Card.Rank.ACE, Card.Suit.HEARTS));
+        IO.println(player.showHand());
     }
 }
