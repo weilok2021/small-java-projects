@@ -1,50 +1,28 @@
-Blackjack Game ♠️♥️♣️♦️
+# Blackjack Game ♠️♥️♣️♦️
 
-A simple command-line Blackjack game built in Java that simulates a real casino-style experience between a player and the dealer. The game automatically handles card dealing, scoring, and game flow — allowing players to hit, stand, and compete to reach 21 without busting.
+A simple command-line **Blackjack** game implemented in **Java**. The program simulates a casino-style round where a single player competes against the dealer. It handles card dealing, turn-based play (hit / stand), Blackjack detection, and winner determination.
 
-🎮 Features
+---
 
-Interactive gameplay using text-based input
+## Features
+- Interactive text-based gameplay (console input/output)  
+- Standard Blackjack rules: card values, Ace as 1 or 11, dealer hits until 17+  
+- Automatic deck generation and shuffle (52 unique cards)  
+- Immediate Blackjack detection on initial deal  
+- Clear end-of-round evaluation: player win, dealer win, push (tie), busts
 
-Automatic deck shuffling and card dealing
+---
 
-Realistic game flow: dealer plays after player stands
+## Key Concepts Applied
+- **Object-Oriented Design**: `Card`, `Deck`, `Player`, `Dealer`, `Game` classes  
+- **Encapsulation & Abstraction**: clear separation of responsibilities between model and controller  
+- **Testability**: logic separated into small methods (e.g., hand evaluation, Blackjack check) for unit testing  
+- **Clean Code Practices**: readable methods, small functions, and documented assumptions
 
-Immediate detection of Blackjack
+---
 
-Clear win/loss/draw evaluation
-
-🧠 Key Concepts Applied
-
-Object-Oriented Programming (OOP) — classes for Player, Dealer, Deck, and Card
-
-Encapsulation and inheritance for managing behavior differences between player and dealer
-
-Game logic control for handling turn sequences and round evaluation
-
-I/O handling using Scanner and custom print methods
-
-🛠️ Tools & Technologies
-
-Language: Java
-
-Environment: IntelliJ IDEA / VS Code / Any Java IDE
-
-JDK Version: 17 or above
-
-🚀 How to Run
-
-Clone the repository:
-
-git clone https://github.com/yourusername/small-java-projects.git
-
-
-Navigate to the Blackjack folder:
-
-cd small-java-projects/black-jack
-
-
-Compile and run:
-
-javac Game.java
-java Game
+## Tools & Technologies
+- **Language:** Java  
+- **Build:** (optional) Maven  
+- **IDE:** IntelliJ IDEA (recommended) or any Java-capable editor  
+- **JDK:** Java 17+ recommended
